@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <script src="./quadLimbDark.js"></script>
+    <script src="./math.min.js"></script>
+    <script>
+
+      P              = 3.52474541;  // planet orbital period [day]   
+      ap             = 10.210;      // orbital radius [Rs]
+      p              = 1.146;       // star radius [Rs]
+      n              = 500;         // number of points
+      percentOfOrbit = 10;          // percentage of orbital phase used for flux
+      i              = 83;          // orbit inclination [deg]
+      noiseCoef      = 0.05;        // how much gaussian noise to add
+
+      // limb-darkening coefficients
+      gamma1 = 0.296;
+      gamma2 = 0.34;
+
+      F = new Array();
+      F = quadLimbDark(p,ap,P,i,gamma1,gamma2,n,percentOfOrbit);
+    </script>
+  </body>
+</html>
